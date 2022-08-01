@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="server.port1">39169</entry>
+	<entry key="server.port2">39170</entry>
+	<entry key="server.port3">39171</entry>
+	<entry key="server.thread_pool_size">8</entry>
+	<entry key="server.task_queue_max_length">200</entry>
+	<entry key="server.bind_address">127.0.0.1</entry>
+	<entry key="server.receive_buffer_size">71680</entry>
+</properties>

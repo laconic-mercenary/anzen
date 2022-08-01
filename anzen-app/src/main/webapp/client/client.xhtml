@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="../common/layout.xhtml">
+	
+	<ui:define name="content">
+		<h:panelGroup id="client-content-wrapper" layout="block">
+			<h:form id="client-menu-form" prependId="false">
+				<h:messages id="client-messages" 
+							showSummary="true" 
+							globalOnly="true"/>
+				<br/>
+				<h:button id="nav-home-button"
+								 outcome="/home/home.jsf"
+								 styleClass="anzen-button"
+								 title="TODO"
+								 value="ホームページ" />
+				<br/>
+				<h:selectOneMenu id="client-select-menu"
+								 styleClass="anzen-select"
+                     			 value="#{clientBean.selectedClient}">
+                    <f:selectItem itemValue="#{null}" 
+                    			  itemLabel="--接続しているクライアント--" />
+			        <f:selectItems id="client-listings"
+			        			   value="#{clientBean.clients}"
+			        			   var="client"
+			        			   itemLabel="#{client.clientName}" 
+			        			   itemValue="#{client.clientName}" />
+			       <!-- navigation handled by the listener -->
+			        <f:ajax event="change"
+			        		listener="#{clientBean.onClientSelected}"
+			        		render="@all"/>
+			    </h:selectOneMenu>
+			</h:form>
+		</h:panelGroup>
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+	<h:panelGroup id="logging-level-content-wrapper" layout="block">
+		<h:form id="home-menu-form" prependId="false">
+			<h:panelGroup layout="block" style="margin: auto;">
+				<h:selectOneRadio id="available-log-levels-select"
+								style="color: yellow; margin: auto;"
+								value="#{loggingLevelBean.selectedLogLevel}">
+					<f:selectItems 
+						value="#{loggingLevelBean.availableLogLevels}"
+						var="ll"
+						itemLabel="#{ll.toString()}"
+						itemValue="#{ll.toInt()}" />
+				</h:selectOneRadio>
+				<br></br>
+				<h:inputText id="target-package-input" 
+						styleClass="anzen-text"
+						value="#{loggingLevelBean.targetPackage}"/>
+			</h:panelGroup>
+			<h:message id="log-level-messages" 
+					style="color: blue; font-size: 1.5em;"
+					for="available-log-levels-select"
+					showSummary="true" 
+					showDetail="false" />
+			<br></br>
+			<h:commandButton id="change-log-level-button"
+							 action="#{loggingLevelBean.changeLevelAction()}" 
+							 styleClass="anzen-button"
+							 title=""
+							 value="ログレベルをアップデートして">
+			</h:commandButton>
+		</h:form>
+	</h:panelGroup>
+</ui:composition>

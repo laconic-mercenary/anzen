@@ -1,0 +1,1 @@
+java -jar anzen-client.jar -cpf LOCALHOST_client_params.xml -spf LOCALHOST_server_params.xml

@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="../common/layout.xhtml">
+
+	<ui:define name="content">
+
+		<h:outputScript library="js" name="anzen-client-stream.js" />
+
+		<h:outputScript rendered="#{not empty clientBean.selectedClient}">
+			var imgTarget = undefined;
+		
+			var stream = {
+				onOpen: function() {
+					anzenClientStream.send('#{streamBean.streamId}');
+				},
+				onClose: function() {
+				},
+				onError: function() {
+				},
+				onMessage: function(event) {
+					imgTarget.setAttribute(
+						'src', 
+						'#{streamBean.imageEncodingSrcString}' + event.data
+					);
+				}
+			};
+			
+			anzenClientStream.onOpen = stream.onOpen;
+			anzenClientStream.onClose = stream.onClose;
+			anzenClientStream.onMessage = stream.onMessage;
+			anzenClientStream.onError = stream.onMessage;
+			
+			window.onload = function() {
+				imgTarget = document.getElementById('stream-image');
+				anzenClientStream.openSocket('#{streamBean.streamSocketUrl}');
+			};
+		</h:outputScript>
+
+		<h:panelGroup id="no-client-selected-span"
+			rendered="#{empty streamBean.selectedClientName}">
+			<h2 class="anzen-err-text">クライアントを選（えら）ばなかった</h2>
+		</h:panelGroup>
+
+		<h:panelGroup id="client-stream-content-wrapper" layout="block">
+			<h:form id="client-stream-form" prependId="false">
+				<h:commandButton 
+					id="nav-client-button" 
+					action="/client/client.jsf"
+					styleClass="anzen-button" 
+					title="クライアントリストをながめる"
+					value="クライアントリストを眺める">
+				</h:commandButton>
+			</h:form>
+			<img id="stream-image" 
+				alt="当分、イメージはストリーミングしていない" 
+				height="70%"
+				width="70%">
+			</img>
+		</h:panelGroup>
+
+	</ui:define>
+
+</ui:composition>

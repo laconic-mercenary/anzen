@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="../common/layout.xhtml">
+	<ui:define name="content">
+		<h:panelGroup id="home-content-wrapper" layout="block">
+			<h:form id="home-menu-form" prependId="false">
+				<h:commandButton id="nav-client-button"
+								 action="/client/client.jsf" 
+								 styleClass="anzen-button"
+								 title="せつぞく"
+								 value="接続しているクライアントのリスト">
+				</h:commandButton>
+				<br></br>
+				<h:commandButton id="nav-maintenance-button"
+								 action="/maintenance/maintenance.jsf" 
+								 styleClass="anzen-button"
+								 title="せいび"
+								 value="整備ページ">
+				</h:commandButton>
+			</h:form>
+		</h:panelGroup>
+	</ui:define>
+</ui:composition>

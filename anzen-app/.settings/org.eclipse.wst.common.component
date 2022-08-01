@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="anzen-app">
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <dependent-module archiveName="anzen-core-1.0-RC1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/anzen-core/anzen-core">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="ports-api-1.0-RC1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/ports-api/ports-api">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="frontier-library-1.0-RC1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/frontier-library/frontier-library">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="shishya-distributed-1.0-RC1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/shishya-distributed/shishya-distributed">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="shishya-client-1.0-RC1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/shishya-client/shishya-client">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="shishya-common-1.0-RC1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/shishya-common/shishya-common">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="shishya-server-1.0-RC1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/shishya-server/shishya-server">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="context-root" value="anzen-app"/>
+        <property name="java-output-path" value="/anzen-app/target/classes"/>
+    </wb-module>
+</project-modules>

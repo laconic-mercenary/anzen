@@ -1,0 +1,31 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.frontier</groupId>
+	<artifactId>anzen</artifactId>
+	<version>1.0-RC1</version>
+	<packaging>pom</packaging>
+	<name>Anzen</name>
+	<description>Home Security Software</description>
+	<properties>
+		<javase.version>1.8</javase.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<junit.version>4.11</junit.version>
+		<org.mockito.version>1.9.5</org.mockito.version>
+		<org.apache.commons.io.version>2.4</org.apache.commons.io.version>
+		<org.apache.log4j.version>1.2.17</org.apache.log4j.version>
+		<org.apache.commons.codec.version>1.10</org.apache.commons.codec.version>
+		<org.apache.commons.lang3.version>3.4</org.apache.commons.lang3.version>
+		<google.guava.version>19.0</google.guava.version>
+		<com.frontier.lib.ports-api.version>1.0-RC1</com.frontier.lib.ports-api.version>
+		<shishya.distributed.version>1.0-RC1</shishya.distributed.version>
+		<google.gson.version>2.6.2</google.gson.version>
+	</properties>
+	<modules>
+		<module>anzen-core</module>
+		<module>anzen-device</module>
+		<module>anzen-app</module>
+		<module>anzen-client</module>
+		<module>anzen-desktop-client</module>
+	</modules>
+</project>

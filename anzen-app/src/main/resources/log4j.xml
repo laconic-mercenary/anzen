@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<appender name="anzen_app_log" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="anzen-app.log" />
+		<param name="Append" value="TRUE" />
+		<param name="MaxFileSize" value="10MB" />
+		<param name="MaxBackupIndex" value="10" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="conversionPattern" value="%d %-5p [%c{1}] %m %n" />
+		</layout>
+	</appender>
+	
+	<appender name="shishya_log" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="anzen-shishya.log" />
+		<param name="Append" value="TRUE" />
+		<param name="MaxFileSize" value="10MB" />
+		<param name="MaxBackupIndex" value="5" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="conversionPattern" value="%d %-5p [%c{1}] %m %n" />
+		</layout>
+	</appender>
+	
+	<appender name="ports_log" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="anzen-ports.log" />
+		<param name="Append" value="TRUE" />
+		<param name="MaxFileSize" value="10MB" />
+		<param name="MaxBackupIndex" value="5" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="conversionPattern" value="%d %-5p [%c{1}] %m %n" />
+		</layout>
+	</appender>
+	
+	<logger name="anzen.app" additivity="false">
+		<level value="DEBUG" />
+		<appender-ref ref="anzen_app_log" />
+	</logger>
+	
+	<logger name="com.frontier.shishya" additivity="false">
+		<level value="DEBUG" />
+		<appender-ref ref="shishya_log" />
+	</logger>
+	
+	<logger name="com.frontier.ports" additivity="false">
+		<level value="DEBUG" />
+		<appender-ref ref="ports_log" />
+	</logger>
+
+</log4j:configuration>

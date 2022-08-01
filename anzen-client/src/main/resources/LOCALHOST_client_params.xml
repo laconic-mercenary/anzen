@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="client.bind_address">127.0.0.1</entry>
+	<entry key="client.bind_port">42155</entry>
+	<entry key="client.device_name">Camera 0</entry>
+</properties>

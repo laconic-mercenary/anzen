@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="client.server_address">192.168.1.6</entry>
+	<entry key="client.server_rx_port1">39169</entry>
+	<entry key="client.server_rx_port2">39170</entry>
+	<entry key="client.server_rx_port3">39171</entry>
+</properties>
